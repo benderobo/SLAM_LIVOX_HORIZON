@@ -172,6 +172,17 @@ newgrp docker
 # Проверяем
 docker --version
 docker compose version
+
+# Добавляем репозиторий universe
+sudo apt install software-properties-common sudo add-apt-repository universe
+
+sudo apt update
+
+sudo apt install -y ros-humble-ros-Noetic
+
+
+cd ros1-horizon-slam
+git submodule update --init --recursive
 ```
 
 ### Шаг 3: Настройка SSH ключей
