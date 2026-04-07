@@ -3,9 +3,13 @@
     {
       "broadcast_code": "YOUR_BROADCAST_CODE_HERE",
       "enable_connect": true,
+
       "return_mode": 0,
       "coordinate": 0,
-      "imu_rate": 1
+      "imu_rate": 1,
+
+      "host_ip": "192.168.123.100",
+      "lidar_ip": "192.168.123.51"
     }
   ],
   "timesync_config": {
