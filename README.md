@@ -50,11 +50,11 @@
 | 🗺️ **SLAM** | FAST-LIO2 — высокоскоростной 3D SLAM для нелинейных лидаров |
 | 📡 **LiDAR** | Livox Horizon — 6 линий, до 260k точек/сек, угол обзора 70.4°×77.2° |
 | 🐳 **Docker** | Контейнеризация ROS1 Noetic с автоматическим развёртыванием |
-| 🌐 **ROS Bridge** | WebSocket мост для интеграции с веб-приложениями и Node-RED |
+| 🌐 **ROS Bridge** | WebSocket мост для интеграции с веб-приложениями и Node-RED | DONT WORK
 | 🎛️ **Node-RED** | Визуальная автоматизация и дашборд управления |
 | 🔧 **Тюнинг** | Python/YAML утилиты для динамической настройки параметров SLAM |
 | 📦 **PCD** | Сохранение и обработка облаков точек в формате PCD |
-| 🔒 **VPN** | Amnezia/WireGuard/Xray для удалённого доступа |
+| 🔒 **VPN** | Amnezia/WireGuard/Xray для удалённого доступа |You`r config!!!!
 | 📶 **Wi-Fi** | Автоматическое переключение AP/Client режимов |
 
 ---
@@ -125,10 +125,10 @@
 
 | Компонент | Минимальные | Рекомендуемые |
 |-----------|-------------|---------------|
-| **Плата** | Raspberry Pi 5 (4GB) | Raspberry Pi 5 (8GB) |
+| **Плата** | Raspberry Pi 5 (8GB) | Raspberry Pi 5 (8GB) |
 | **Накопитель** | microSD 64GB | NVMe SSD 256GB+ |
 | **ОС** | Ubuntu 24.04 ARM64 | Ubuntu 24.04 ARM64 |
-| **LiDAR** | Livox Horizon | Livox Horizon + Mid-360 |
+| **LiDAR** | Livox Horizon | Livox Horizon |
 | **Сеть** | Ethernet 1Gbps | Ethernet 1Gbps + Wi-Fi 6 |
 
 ### Текущая конфигурация (Pi 5)
@@ -378,7 +378,7 @@ pcd_save:
 - **Стек:** Python + FastAPI + Playwright
 - **GitHub:** [chadi0x/TheBigBrother](https://github.com/chadi0x/TheBigBrother)
 
-### 4. Node-RED
+### 4. Node-RED [Пока не работает, в разработке]
 
 Визуальная автоматизация и дашборд.
 
@@ -390,7 +390,7 @@ pcd_save:
 
 ---
 
-## 🌐 Node-RED Dashboard
+## 🌐 Node-RED Dashboard [Пока не
 
 ### Установка
 
