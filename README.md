@@ -223,10 +223,18 @@ docker compose build
     {
       "broadcast_code": "3WEDH5900101971",
       "enable_connect": true,
-      "host_ip": "192.168.123.100",
-      "lidar_ip": "192.168.123.51"
+      "return_mode": 0,
+      "coordinate": 0,
+      "imu_rate": 1
     }
-  ]
+  ],
+  "timesync_config": {
+    "enable_timesync": false,
+    "device_name": "/dev/ttyUSB0",
+    "comm_device_type": 0,
+    "baudrate_index": 2,
+    "parity_index": 0
+  }
 }
 ```
 
