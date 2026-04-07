@@ -1,0 +1,25 @@
+# CODEOWNERS — Кто отвечает за файлы в репозитории
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Основной мейнтейнер
+* @benderobo
+
+# ROS/SLAM конфигурации
+/config/ @benderobo
+/launch/ @benderobo
+/slam.sh @benderobo
+/run_horizon_ros1.sh @benderobo
+
+# Скрипты
+/scripts/ @benderobo
+
+# Docker
+Dockerfile @benderobo
+Dockerfile.* @benderobo
+docker-compose.yml @benderobo
+
+# Документация
+*.md @benderobo
+
+# CI/CD
+.github/workflows/ @benderobo

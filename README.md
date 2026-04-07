@@ -33,7 +33,7 @@
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB.svg)]()
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-E95420.svg)]()
 
-[Обзор](#-обзор) • [Архитектура](#-архитектура) • [Установка](#-установка) • [Настройка](#-настройка) • [Запуск](#-запуск) • [Компоненты](#-компоненты) • [Node-RED](#-node-red-dashboard) • [VPN](#-vpn-и-удалённый-доступ) • [Troubleshooting](#-troubleshooting)
+[Обзор](#-обзор) • [Архитектура](#-архитектура) • [Установка](#-установка) • [Настройка](#-настройка) • [Запуск](#-запуск) • [Компоненты](#-компоненты) • [Node-RED](#-node-red-dashboard) • [VPN](#-vpn-и-удалённый-доступ) • [Troubleshooting](#-troubleshooting) • [Changelog](CHANGELOG.md) • [Безопасность](SECURITY.md)
 
 </div>
 

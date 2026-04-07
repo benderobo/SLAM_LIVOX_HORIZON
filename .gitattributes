@@ -1,0 +1,32 @@
+* text=auto eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# Python
+*.py text eol=lf
+
+# YAML/YML
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# JSON
+*.json text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# Docker
+Dockerfile text eol=lf
+*.launch text eol=lf
+
+# Binary files
+*.pcd binary
+*.png binary
+*.jpg binary
+*.gif binary
+*.svg binary
+*.tar.gz binary
+*.zip binary
+*.so binary
+*.a binary
