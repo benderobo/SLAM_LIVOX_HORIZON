@@ -1,0 +1,16 @@
+FROM ros:noetic-desktop-full-focal
+
+SHELL ["/bin/bash", "-lc"]
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Дополнительные пакеты для RViz
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git ca-certificates curl \
+    ros-noetic-rviz \
+    ros-noetic-robot-state-publisher \
+    ros-noetic-joint-state-publisher \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /ws
+
+CMD ["bash"]

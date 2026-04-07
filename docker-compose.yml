@@ -1,0 +1,76 @@
+version: "3.8"
+
+services:
+  slam:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ros1_noetic_horizon
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./ws:/ws
+      - ./config/livox_lidar_config.json:/ws/catkin_ws/src/livox_ros_driver/livox_ros_driver/config/livox_lidar_config.json:rw
+      - ./config/horizon.yaml:/ws/catkin_ws/src/fast_lio/config/horizon.yaml:rw
+    command: >
+      bash -lc "
+      source /opt/ros/noetic/setup.bash &&
+      source /ws/catkin_ws/devel/setup.bash &&
+      export ROS_MASTER_URI=http://127.0.0.1:11311 &&
+      export ROS_IP=127.0.0.1 &&
+      unset ROS_HOSTNAME &&
+      roslaunch fast_lio mapping_horizon.launch
+      "
+
+  rosbridge:
+    image: ros1_horizon-ros1_noetic:latest
+    container_name: rosbridge_noetic_horizon
+    restart: unless-stopped
+    network_mode: host
+    depends_on:
+      - slam
+    command: >
+      bash -lc "
+      source /opt/ros/noetic/setup.bash &&
+      source /ws/catkin_ws/devel/setup.bash &&
+      export ROS_MASTER_URI=http://127.0.0.1:11311 &&
+      export ROS_IP=127.0.0.1 &&
+      unset ROS_HOSTNAME &&
+      roslaunch rosbridge_server rosbridge_websocket.launch port:=9090
+      "
+    profiles:
+      - bridge
+
+  rviz:
+    build:
+      context: .
+      dockerfile: Dockerfile.rviz
+    container_name: rviz_noetic_horizon
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - ROS_MASTER_URI=http://${PI5_IP:-192.168.123.100}:11311
+      - ROS_IP=${HOST_IP:-192.168.123.1}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./ws:/ws:rw
+    command: >
+      bash -lc "source /opt/ros/noetic/setup.bash && rviz -d /ws/catkin_ws/src/fast_lio/rviz_cfg/loam_livox.rviz"
+    profiles:
+      - rviz
+
+  thebigbrother:
+    build:
+      context: ./TheBigBrother
+      dockerfile: Dockerfile
+    container_name: thebigbrother_the-big-brother
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./TheBigBrother:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    profiles:
+      - osint

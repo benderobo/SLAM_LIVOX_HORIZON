@@ -1,0 +1,56 @@
+# Игнорировать собранные файлы
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Catkin workspace
+ws/catkin_ws/build/
+ws/catkin_ws/devel/
+ws/catkin_ws/install/
+ws/catkin_ws/src/*/build/
+ws/catkin_ws/src/*/devel/
+
+# PCD файлы (тяжёлые, опционально)
+ws/pcd/*.pcd
+ws/maps/*.pcd
+
+# Docker
+vcpkg/
+.dockerignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node-RED
+.node-red/
+
+# Backup файлы
+*.bak
+*.bak2
+*.bak3
+*.backup.*
+
+# Конфиги с реальными ключами (используйте .env)
+config/livox_lidar_config.json
+.env
+
+# VPN ключи
+vpn_conf/*.conf
+vpn_conf/*.json
+
+# Логи
+*.log
+Log/
+
+# Ollama модели
+ollama/

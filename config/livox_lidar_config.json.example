@@ -1,0 +1,10 @@
+{
+  "lidar_config": [
+    {
+      "broadcast_code": "YOUR_BROADCAST_CODE_HERE",
+      "enable_connect": true,
+      "host_ip": "192.168.123.100",
+      "lidar_ip": "192.168.123.51"
+    }
+  ]
+}
